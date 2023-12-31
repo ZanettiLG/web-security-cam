@@ -1,10 +1,11 @@
 const path = require("path");
 const express = require("express");
 const { provideStream } = require("./stream");
+const { IP, PASS } = require("./configs");
 
 const app = express();
 
-provideStream(app, "192.168.3.80", {pass:"cazape1248"});
+provideStream(app, IP, {pass: PASS});
 
 /* app.use("/static", express.static("./public")); */
 
