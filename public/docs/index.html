@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body style="display: flex; flex-direction: column; width: 100vw; height: 100vh; overflow: hidden; box-sizing: border-box; margin: 0; padding: 1rem; align-items: center;">
+    <header>
+        <h1>Documentation</h1>
+        <h2 id="title_page"></h2>
+    </header>
+    <main style="display: flex; flex-direction: column; flex-grow: 1; box-sizing: border-box; width: 100%; gap: 1em;">
+        <nav id="navigator">
+            <ul style="flex-direction: row; justify-content: center;">
+                <li><button id="back_page">Back</button></li>
+                <li><button id="next_page">Next</button></li>
+            </ul>
+        </nav>
+        <embed id="embed_page" style="display: flex; flex-grow: 1; box-sizing: border-box;" />
+    </main>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
