@@ -13,8 +13,10 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "node-onvif": "^0.1.7",
+    "node-rtsp-stream": "^0.0.9",
     "path": "^0.12.7",
     "rtsp-relay": "^1.8.0",
+    "uuid": "^9.0.1",
     "ws": "^8.16.0"
   }
 }
