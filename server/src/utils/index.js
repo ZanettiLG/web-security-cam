@@ -1,3 +1,7 @@
 const {uuid} = require('./uuid');
 
-module.exports = {uuid};
+const isFunction = (func) => {
+  return func && typeof func === 'function';
+};
+
+module.exports = {uuid, isFunction};

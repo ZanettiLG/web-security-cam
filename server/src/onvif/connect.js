@@ -1,24 +1,30 @@
 const onvif = require('node-onvif');
 
-async function connect (ip, {port="5000", user="admin", pass="admin"})
+async function connect (ip_address, {user="admin", pass="admin123"})
 {
     // Create an OnvifDevice object
-    let device = new onvif.OnvifDevice({
-        xaddr: `http://${ip}:${port}/onvif/device_service`,
+    let onvifDevice = new onvif.OnvifDevice({
+        xaddr: `http://${ip_address}:5000/onvif/device_service`,
         user : user,
-        pass : pass
-    });
-   
-    // Initialize the OnvifDevice object
-    const url = await device.init().then(() => 
-    {
-        // Get the UDP stream URL
-        return device.getUdpStreamUrl();
-    }).catch((error) => {
-        console.error(error);
+        pass : pass,
     });
 
-    return url;
+    try {
+        console.log(onvifDevice);
+
+        // Initialize the OnvifDevice object
+        const url = await onvifDevice.init().then(() => {
+            // Get the UDP stream URL
+            console.log(ip_address);
+            return onvifDevice.getUdpStreamUrl();
+        }).catch((error) => {
+            console.error(error);
+        });
+    
+        return url;
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 module.exports = {connect}
